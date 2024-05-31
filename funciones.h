@@ -1,44 +1,17 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
+#define FUNCIONES_H
 
-int validar(char num[])
-{
-for (int i = 0; i < strlen(num); i++)
-{
-if (!(isdigit(num[i])))
-{
-printf("Recuerde que solo lleva numeros\n");
-getchar();
-return 0;
-}
-}
-return 1;
-}
-int validarlet(char let[])
-{
-for (int i = 0; i < strlen(let); i++)
-{
-if (!(isalpha(let[i])))
-{
-printf("Recuerde que solo lleva letras\n");
-getchar();
-return 0;
-}
-}
-return 1;
-}
-int validarpunto(char num[])
-{
-for (int i = 0; i < strlen(num); i++)
-{
-if (isdigit(num[i]) || num[i] == '.')
-{
-return 1;
-}
-}
-printf("Recuerde que solo lleva numeros\n");
-getchar();
-return 0;
-}
+#define LONGITUD 50
+#define CADENA 5
+#define PRODUCTOS 50
+
+extern char inventario[PRODUCTOS][CADENA][LONGITUD];
+extern int x;
+
+int validarlet(char cadena[]);
+int validar(char cadena[]);
+int validarpunto(char cadena[]);
+void ingresar_producto(void);
+void editar_producto(void);
+void eliminar_producto(void);
+void listar_productos(void);
+void buscar_producto(void);
